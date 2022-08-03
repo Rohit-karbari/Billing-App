@@ -1,24 +1,53 @@
-import logo from './logo.svg';
-import './App.css';
+import React,{useState, useEffect} from 'react'
+import NavBar from './Components/NavBar';
+import './App.css'
+import { useSelector } from 'react-redux'
 
-function App() {
+
+const App = (props) => {
+  const [isLogin, setIsLogin] = useState(false)
+const [isLoading, setIsLoading] = useState(true)
+const products = useSelector((state)=>{
+  return state.products
+})
+const bills = useSelector((state)=>{
+  return state.bills
+})
+const customers = useSelector((state)=>{
+  return state.customers
+})
+const account = useSelector((state)=>{
+  return state.account
+})
+console.log("customers", account)
+useEffect(()=>{
+  if(products.length>0 || customers.length>0 || bills.length>0){
+    setIsLoading(false)
+  }
+},[customers, products, bills])
+  const handleAuth = () => {
+    setIsLogin(!isLogin)
+  }
+
+  useEffect(() => {
+    if(localStorage.getItem('token')){
+      handleAuth()
+    }
+  },[])
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <>
+    {
+      !isLoading && (
+        <>
+        
+    <div className="app">
+    <div>     
+        <NavBar isLogin={isLogin} handleAuth={handleAuth}/>
     </div>
+    </div>
+    </>
+      )
+}</>
   );
 }
 
