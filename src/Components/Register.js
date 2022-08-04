@@ -96,7 +96,7 @@ const Register = (props) => {
                     
                 /> {formik.errors.address}<br/><br/>
                 
-                <input type='submit'  className="btn btn-outline-dark" value='Register'/> <span className="text-dark">* If an exesting user please <Link to='/login'>Login</Link></span>
+                <input type='submit'  className="btn btn-outline-dark" value='Register'/> <span className="text-dark">* If an exesting user please <Link style={{textDecoration:'none', color:'blue'} } to='/login'>Login</Link></span>
             </form>
         </div>
     )

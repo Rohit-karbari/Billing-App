@@ -4,10 +4,7 @@ import { BrowserRouter } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import App from './App';
 import ConfigureStore from './Store/ConfigureStore';
-import { StartGetCust } from './Actions/CustomerAction';
-import { startGetUser } from './Actions/AccountAction';
-import { StartGetProd } from './Actions/ProductsAction';
-import { StartGetBill } from './Actions/BillAction';
+import { asyncInitialUserDetailsFetch } from "./Actions/AccountAction"
 
 
 
@@ -20,10 +17,11 @@ store.subscribe(() => {
 })
 
 if(localStorage.hasOwnProperty('token')){
-     store.dispatch(startGetUser())
-     store.dispatch(StartGetCust())
-     store.dispatch(StartGetProd())
-     store.dispatch(StartGetBill())
+    //  store.dispatch(startGetUser())
+    //  store.dispatch(StartGetCust())
+    //  store.dispatch(StartGetProd())
+    //  store.dispatch(StartGetBill())
+    store.dispatch(asyncInitialUserDetailsFetch())
 }
 
 

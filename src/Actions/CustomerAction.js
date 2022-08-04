@@ -51,7 +51,7 @@ export const StartGetCust = () => {
     }
 } 
 
-const getCustomer = (data) => {
+export const getCustomer = (data) => {
     return {
         type: 'GET_CUSTOMER',
         payload: data

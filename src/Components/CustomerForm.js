@@ -44,7 +44,7 @@ const CustomerForm = (props) => {
             <h3>Customer form</h3>
             {
                 modal ? (
-                    <Modal size='md' isOpen={modal}>
+                    <Modal size='sm' isOpen={modal}>
                         <ModalHeader>
                             Edit Form
                         </ModalHeader>
@@ -94,6 +94,8 @@ const CustomerForm = (props) => {
     )
 }
 export default CustomerForm
+
+
 
 
 

@@ -93,7 +93,7 @@ const history = useHistory()
                                         })
                                     }
                                 
-                            </select><button onClick={addFields} type='button'><i class="bi bi-bag-plus-fill"></i></button><br/>
+                            </select><button onClick={addFields} type='button' className="btn btn-4"><i class="bi bi-bag-plus-fill"></i></button><br/>
                             <label className="form-label">Quantity</label><br/>
                             <input
                                 type='number'
@@ -103,9 +103,9 @@ const history = useHistory()
                                 onChange={e => handleFormChange(e,i)}
                                 value={ele.quantity}
                             />
-                            { formFields.length > 1 && <button onClick={() => {
+                            { formFields.length > 1 && <button className="btn" onClick={() => {
                                 Remove(i)
-                            }}>Delete</button>}
+                            }}><i class="bi bi-trash"></i></button>}
                             
                         </div>
                         

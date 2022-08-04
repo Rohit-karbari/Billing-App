@@ -55,7 +55,7 @@ export const StartGetBill = () => {
     }
 }
 
-const getBills = (data) => {
+ export const getBills = (data) => {
     return {
         type: 'GET_BILL',
         payload: data

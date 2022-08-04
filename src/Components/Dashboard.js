@@ -21,10 +21,10 @@ const AboutApp = (props) => {
 
 
         const data = [
-            ['Type', "numbers"],
-            ["products", products.length],
-            ["Customers",customers.length],
-            ["bills", bills.length],
+            ['Type', "numbers",{ role: "style" }],
+            ["products", products.length,"black"],
+            ["Customers",customers.length,'orange'],
+            ["bills", bills.length,'black'],
         ];
 
         const options = {
@@ -35,10 +35,10 @@ const AboutApp = (props) => {
         <div className="row p-5 ">
             
                      <Chart
-      chartType="PieChart"
+      chartType="ColumnChart"
       data={data}
       options={options}
-      width={"100%"}
+      width={"80%"}
       height={"400px"}
     />
             <div className="col-md-6">
